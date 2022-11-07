@@ -1,10 +1,9 @@
 package com.markusw.app.ui.view.activities
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.markusw.postsapp.databinding.ActivityWritePostBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.markusw.app.core.interfaces.Initalizer
+import com.markusw.postsapp.databinding.ActivityWritePostBinding
 
 class WritePostActivity: Initalizer, AppCompatActivity() {
 
@@ -33,16 +32,8 @@ class WritePostActivity: Initalizer, AppCompatActivity() {
         }
     }
 
-    private fun switchToMainActivity() {
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
-    }
-
-
-    @Deprecated("Deprecated in Java")
     @Suppress("DEPRECATION")
-    override fun onBackPressed() {
-        switchToMainActivity()
+    private fun switchToMainActivity() {
         super.onBackPressed()
     }
 

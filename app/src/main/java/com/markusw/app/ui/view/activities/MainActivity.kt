@@ -73,7 +73,6 @@ class MainActivity: Initalizer, AppCompatActivity() {
 
     private fun switchToWritePostActivity() {
         startActivity(Intent(this, WritePostActivity::class.java))
-        finish()
     }
 
 
