@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="10dp"
+    android:layout_marginTop="10dp"
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/postTitleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post title"
+            android:textSize="35sp"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:layout_below="@+id/postTitleTxt"
+            android:id="@+id/postImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher_background"
+            />
+
+        <TextView
+            android:id="@+id/postDescriptionTxt"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/postImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porttitor ligula eu est elementum ultrices. Mauris tincidunt finibus commodo. In sit amet turpis vitae mi ullamcorper interdum. . "
+            />
+
+
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
