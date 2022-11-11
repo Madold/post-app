@@ -15,8 +15,6 @@ class PostsViewHolder(view: View): ViewHolder(view) {
         binding.postTitleTxt.text = post.title
         binding.postDescriptionTxt.text = post.description
 
-        println(post.imageURL)
-
         Glide.with(binding.postImageView.context)
             .asBitmap()
             .load(post.imageURL)
