@@ -66,7 +66,6 @@ class MainActivity: Initalizer, AppCompatActivity() {
     }
 
     override fun initEventListeners() {
-
         binding.topAppBar.setOnMenuItemClickListener { menuItem ->
                 when (menuItem.itemId) {
                     R.id.writePostIcon -> switchToWritePostActivity()
@@ -78,7 +77,6 @@ class MainActivity: Initalizer, AppCompatActivity() {
             println("Chupando peo")
             viewModel.refreshPosts()
         }
-
     }
 
     private fun switchToWritePostActivity() {
