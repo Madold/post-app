@@ -45,12 +45,16 @@
        app:layout_constraintTop_toTopOf="@+id/topAppBarLayout"
        app:layout_constraintBottom_toBottomOf="parent">
 
-       <androidx.recyclerview.widget.RecyclerView
-           android:id="@+id/postsRecyclerView"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:padding="10dp"
-            />
+      <ScrollView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+          <androidx.recyclerview.widget.RecyclerView
+              android:id="@+id/postsRecyclerView"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="10dp"
+              />
+      </ScrollView>
 
    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
