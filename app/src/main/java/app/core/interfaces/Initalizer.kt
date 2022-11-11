@@ -1,4 +1,4 @@
-package com.markusw.app.core.interfaces
+package app.core.interfaces
 
 interface Initalizer {
 

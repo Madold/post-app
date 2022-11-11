@@ -1,8 +1,8 @@
-package com.markusw.app.ui.view.activities
+package app.ui.view.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.markusw.app.core.interfaces.Initalizer
+import app.core.interfaces.Initalizer
 import com.markusw.postsapp.databinding.ActivityWritePostBinding
 
 class WritePostActivity: Initalizer, AppCompatActivity() {

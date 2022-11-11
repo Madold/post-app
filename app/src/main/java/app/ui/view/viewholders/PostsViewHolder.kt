@@ -1,9 +1,9 @@
-package com.markusw.app.ui.view.viewholders
+package app.ui.view.viewholders
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
-import com.markusw.app.data.model.PostModel
+import app.data.model.PostModel
 import com.markusw.postsapp.R
 import com.markusw.postsapp.databinding.ItemPostBinding
 

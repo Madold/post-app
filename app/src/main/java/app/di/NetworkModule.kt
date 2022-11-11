@@ -1,7 +1,7 @@
-package com.markusw.app.di
+package app.di
 
-import com.markusw.app.core.Constants.END_POINT
-import com.markusw.app.data.network.PostApiClient
+import app.core.Constants.END_POINT
+import app.data.network.PostApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

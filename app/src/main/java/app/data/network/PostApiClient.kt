@@ -1,6 +1,6 @@
-package com.markusw.app.data.network
+package app.data.network
 
-import com.markusw.app.data.model.PostModel
+import app.data.model.PostModel
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.GET

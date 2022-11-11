@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.markusw.app.ui.view.activities.MainActivity">
+    tools:context="app.ui.view.activities.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -43,22 +43,17 @@
             </com.google.android.material.appbar.AppBarLayout>
 
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@+id/topAppBarLayout"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent">
 
                 <androidx.recyclerview.widget.RecyclerView
-
+                    app:layout_constraintTop_toTopOf="@+id/topAppBarLayout"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
                     android:padding="10dp"
                     android:id="@+id/postsRecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="120dp"
                     />
-            </FrameLayout>
 
 
 

@@ -1,4 +1,4 @@
-package com.markusw.app.ui.view.activities
+package app.ui.view.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,12 +8,14 @@ import androidx.core.view.isVisible
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
-import com.markusw.app.core.interfaces.Initalizer
-import com.markusw.app.ui.view.adapters.PostsAdapter
-import com.markusw.app.ui.viewmodel.PostViewModel
+import app.core.interfaces.Initalizer
+import app.ui.view.adapters.PostsAdapter
+import app.ui.viewmodel.PostViewModel
 import com.markusw.postsapp.R
 import com.markusw.postsapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 //TODO: Agregar blur a las cards
@@ -58,6 +60,8 @@ class MainActivity: Initalizer, AppCompatActivity() {
         viewModel.posts.observe(this) { posts ->
             adapter.setPosts(posts)
         }
+
+
     }
 
     override fun initEventListeners() {

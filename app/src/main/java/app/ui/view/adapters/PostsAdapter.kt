@@ -1,11 +1,11 @@
-package com.markusw.app.ui.view.adapters
+package app.ui.view.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.markusw.app.data.model.PostModel
-import com.markusw.app.ui.view.viewholders.PostsViewHolder
+import app.data.model.PostModel
+import app.ui.view.viewholders.PostsViewHolder
 import com.markusw.postsapp.R
 
 class PostsAdapter: RecyclerView.Adapter<PostsViewHolder>() {

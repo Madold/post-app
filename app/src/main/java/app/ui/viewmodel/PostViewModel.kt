@@ -1,10 +1,10 @@
-package com.markusw.app.ui.viewmodel
+package app.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.markusw.app.data.model.PostModel
-import com.markusw.app.domain.usecases.GetAllPost
+import app.data.model.PostModel
+import app.domain.usecases.GetAllPost
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,6 +16,7 @@ class PostViewModel
     ) : ViewModel()  {
 
     val isLoading = MutableLiveData<Boolean>()
+    val isRefreshing = MutableLiveData<Boolean>()
     val posts = MutableLiveData<List<PostModel>>()
 
     fun onCreate() {
@@ -26,6 +27,18 @@ class PostViewModel
             posts.postValue(response.reversed())
 
             isLoading.postValue(false)
+        }
+    }
+
+    fun refreshPosts() {
+        viewModelScope.launch {
+            isRefreshing.postValue(true)
+
+            val response = getAllPost()
+            posts.postValue(response.reversed())
+
+            isRefreshing.postValue(false)
+
         }
     }
 

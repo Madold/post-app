@@ -1,7 +1,7 @@
-package com.markusw.app.data
+package app.data
 
-import com.markusw.app.data.model.PostModel
-import com.markusw.app.data.network.PostApiService
+import app.data.model.PostModel
+import app.data.network.PostApiService
 import javax.inject.Inject
 
 class PostsRepository @Inject constructor(
