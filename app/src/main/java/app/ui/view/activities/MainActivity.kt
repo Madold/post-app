@@ -83,5 +83,4 @@ class MainActivity: Initalizer, AppCompatActivity() {
         startActivity(Intent(this, WritePostActivity::class.java))
     }
 
-
 }
