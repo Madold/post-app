@@ -5,17 +5,15 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.google.android.flexbox.FlexDirection
-import com.google.android.flexbox.FlexWrap
-import com.google.android.flexbox.FlexboxLayoutManager
 import app.core.interfaces.Initalizer
 import app.ui.view.adapters.PostsAdapter
 import app.ui.viewmodel.PostViewModel
+import com.google.android.flexbox.FlexDirection
+import com.google.android.flexbox.FlexWrap
+import com.google.android.flexbox.FlexboxLayoutManager
 import com.markusw.postsapp.R
 import com.markusw.postsapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 
 //TODO: Agregar blur a las cards
@@ -61,7 +59,10 @@ class MainActivity: Initalizer, AppCompatActivity() {
             adapter.setPosts(posts)
         }
 
+        viewModel.isRefreshing.observe(this) { refreshing ->
+            binding.swipeLayout.isRefreshing = refreshing
 
+        }
     }
 
     override fun initEventListeners() {
@@ -73,12 +74,16 @@ class MainActivity: Initalizer, AppCompatActivity() {
             return@setOnMenuItemClickListener true
         }
 
+        binding.swipeLayout.setOnRefreshListener {
+            println("Chupando peo")
+            viewModel.refreshPosts()
+        }
+
     }
 
     private fun switchToWritePostActivity() {
         startActivity(Intent(this, WritePostActivity::class.java))
     }
-
 
 
 }

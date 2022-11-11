@@ -21,10 +21,11 @@ class PostViewModel
 
     fun onCreate() {
         viewModelScope.launch {
+
             isLoading.postValue(true)
 
             val response = getAllPost()
-            posts.postValue(response.reversed())
+            //posts.postValue(response.reversed())
 
             isLoading.postValue(false)
         }
@@ -35,10 +36,10 @@ class PostViewModel
             isRefreshing.postValue(true)
 
             val response = getAllPost()
+            posts.postValue(emptyList())
             posts.postValue(response.reversed())
 
             isRefreshing.postValue(false)
-
         }
     }
 
