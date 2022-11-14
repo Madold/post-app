@@ -13,14 +13,14 @@ interface PostApiClient {
     @GET("post")
     suspend fun getAllPosts(): Response<List<PostModel>>
 
-    /*
+
     @Multipart
     @POST("post")
     suspend fun savePost(
         @Part("titulo") titulo: String,
         @Part("description") description: String,
-        @Part("file") file: MultipartBody.Part
-    )*/
+        @Part file: MultipartBody.Part
+    )
 
 }
 

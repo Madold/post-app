@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import app.core.interfaces.Initalizer
 import app.ui.view.adapters.PostsAdapter
-import app.ui.viewmodel.PostViewModel
+import app.ui.viewmodel.MainViewModel
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
@@ -17,15 +17,14 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 //TODO: Agregar blur a las cards
-//TODO: Agregar swipe refresh a el recycler view
 //TODO: Si es posible implementar un sticky header
 //TODO: Agregar la funcionalidad de redactar un post
 
 @AndroidEntryPoint
-class MainActivity: Initalizer, AppCompatActivity() {
+class MainActivity : Initalizer, AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val viewModel: PostViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModels()
     private lateinit var adapter: PostsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,20 +60,19 @@ class MainActivity: Initalizer, AppCompatActivity() {
 
         viewModel.isRefreshing.observe(this) { refreshing ->
             binding.swipeLayout.isRefreshing = refreshing
-
         }
     }
 
     override fun initEventListeners() {
+
         binding.topAppBar.setOnMenuItemClickListener { menuItem ->
-                when (menuItem.itemId) {
-                    R.id.writePostIcon -> switchToWritePostActivity()
-                }
+            when (menuItem.itemId) {
+                R.id.writePostIcon -> switchToWritePostActivity()
+            }
             return@setOnMenuItemClickListener true
         }
 
         binding.swipeLayout.setOnRefreshListener {
-            println("Chupando peo")
             viewModel.refreshPosts()
         }
     }

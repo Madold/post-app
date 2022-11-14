@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class PostViewModel
+class MainViewModel
     @Inject constructor(
         private val getAllPost: GetAllPost
     ) : ViewModel()  {
@@ -25,7 +25,7 @@ class PostViewModel
             isLoading.postValue(true)
 
             val response = getAllPost()
-            //posts.postValue(response.reversed())
+            posts.postValue(response.reversed())
 
             isLoading.postValue(false)
         }

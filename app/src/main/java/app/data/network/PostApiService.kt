@@ -3,6 +3,7 @@ package app.data.network
 import app.data.model.PostModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import okhttp3.MultipartBody
 import javax.inject.Inject
 
 class PostApiService @Inject constructor(
@@ -10,13 +11,6 @@ class PostApiService @Inject constructor(
 ) {
 
     suspend fun getAllPosts(): List<PostModel>? {
-        /*
-        return withContext(Dispatchers.IO) {
-            val response = api.getAllPosts()
-
-            response.body()
-        }*/
-
 
         return try {
              withContext(Dispatchers.IO) {
@@ -33,6 +27,12 @@ class PostApiService @Inject constructor(
             emptyList()
         }
 
+    }
+
+    suspend fun savePost(title: String, description: String, imgFile: MultipartBody.Part) {
+       withContext(Dispatchers.IO) {
+           api.savePost(title, description, imgFile)
+       }
     }
 
 }

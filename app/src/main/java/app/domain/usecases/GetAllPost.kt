@@ -8,5 +8,4 @@ class GetAllPost @Inject constructor(
 ) {
 
     suspend operator fun invoke() = repository.getAllPost()
-
 }

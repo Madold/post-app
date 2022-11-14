@@ -18,9 +18,8 @@ class PostsViewHolder(view: View): ViewHolder(view) {
         Glide.with(binding.postImageView.context)
             .asBitmap()
             .load(post.imageURL)
-            .error(R.drawable.ic_launcher_background)
+            .error(R.drawable.error_image)
             .into(binding.postImageView)
     }
-
 
 }
